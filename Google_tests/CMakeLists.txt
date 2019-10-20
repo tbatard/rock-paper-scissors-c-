@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(Google_tests)
 
-message(STATUS "CMAKE_CURRENT_BINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}")
-
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -39,9 +37,3 @@ endif()
 #add_executable(example example.cpp)
 #target_link_libraries(example gtest_main)
 #add_test(NAME example_test COMMAND example)
-
-
-
-#include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-
-
