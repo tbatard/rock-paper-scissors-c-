@@ -10,4 +10,4 @@ add_executable(rock_paper_scissors main.cpp ${SOURCE_FILES})
 add_subdirectory(Google_tests)
 
 add_executable(Google_Tests_run ${SOURCE_FILES} HelloWorldTest.cpp)
-target_link_libraries(Google_Tests_run gtest gtest_main)
+target_link_libraries(Google_Tests_run gtest_main)
