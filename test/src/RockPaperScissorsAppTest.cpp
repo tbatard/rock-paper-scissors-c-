@@ -33,8 +33,14 @@ TEST_F(RockPaperScissorsAppTest, displayChoices) {
   EXPECT_STREQ("1: Rock\n2: Paper\n3: Scissors\n", output.data());
 }
 
-TEST_F(RockPaperScissorsAppTest, mapInputToChoice) {
+TEST_F(RockPaperScissorsAppTest, mapInputToChoice_whenInputIs1) {
   EXPECT_EQ(rockPaperScissorsApp->mapInputToChoice(1), ROCK);
+}
+
+TEST_F(RockPaperScissorsAppTest, mapInputToChoice_whenInputIs2) {
   EXPECT_EQ(rockPaperScissorsApp->mapInputToChoice(2), PAPER);
+}
+
+TEST_F(RockPaperScissorsAppTest, mapInputToChoice_whenInputIs3) {
   EXPECT_EQ(rockPaperScissorsApp->mapInputToChoice(3), SCISSORS);
 }
