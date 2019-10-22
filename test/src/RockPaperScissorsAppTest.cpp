@@ -16,7 +16,8 @@ protected:
 
 TEST_F(RockPaperScissorsAppTest, start_callsDisplayMethod3Times) {
   std::ifstream mockedInput;
-  EXPECT_CALL(rockPaperScissors, getDisplayChoice).Times(testing::Exactly(4));
+  EXPECT_CALL(rockPaperScissors, getDisplayChoice).Times(testing::Exactly(5));
+  EXPECT_CALL(rockPaperScissors, getRandomChoice).Times(testing::Exactly(1));
 
   rockPaperScissorsApp->start(mockedInput);
 }

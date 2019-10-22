@@ -12,3 +12,7 @@ std::string RockPaperScissors::getDisplayChoice(Choice choice) {
       return "";
   }
 }
+
+Choice RockPaperScissors::getRandomChoice() {
+  return static_cast<Choice>(random() % 6);
+}

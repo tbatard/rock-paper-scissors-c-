@@ -8,6 +8,7 @@ enum Choice { ROCK, PAPER, SCISSORS };
 class RockPaperScissors {
 public:
    virtual std::string getDisplayChoice(Choice choice);
+   virtual Choice getRandomChoice();
 };
 
 

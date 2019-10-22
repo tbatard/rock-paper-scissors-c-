@@ -14,8 +14,10 @@ void RockPaperScissorsApp::start(std::istream& input) {
   std::cout << "Your choice: ";
   int inputChoice = 0;
   input >> inputChoice;
-  auto choice = mapInputToChoice(inputChoice);
-  std::cout << rockPaperScissors->getDisplayChoice(choice);
+  auto playersChoice = mapInputToChoice(inputChoice);
+  auto iasChoice = rockPaperScissors->getRandomChoice();
+  std::cout << "Player's choice: " << rockPaperScissors->getDisplayChoice(playersChoice) << std::endl;
+  std::cout << "IA's choice: " << rockPaperScissors->getDisplayChoice(iasChoice) << std::endl;
 }
 
 void RockPaperScissorsApp::displayChoices() {

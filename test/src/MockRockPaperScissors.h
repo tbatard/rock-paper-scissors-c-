@@ -6,8 +6,8 @@
 
 class MockRockPaperScissors : public RockPaperScissors {
 public:
-  MOCK_METHOD(std::string, getDisplayChoice, (Choice
-      choice), (override));
+  MOCK_METHOD(std::string, getDisplayChoice, (Choice choice), (override));
+  MOCK_METHOD(Choice, getRandomChoice, (), (override));
 
   MockRockPaperScissors() {
     ON_CALL(*this, getDisplayChoice).WillByDefault([this](Choice choice) {
