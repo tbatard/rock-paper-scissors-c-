@@ -15,6 +15,7 @@ public:
   }
 
   void displayChoices();
+  static Choice mapInputToChoice(int input);
 };
 
 

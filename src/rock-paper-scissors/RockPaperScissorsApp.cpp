@@ -14,7 +14,7 @@ void RockPaperScissorsApp::start(std::istream& input) {
   std::cout << "Your choice: ";
   int inputChoice = 0;
   input >> inputChoice;
-  auto choice = static_cast<Choice>(inputChoice);
+  auto choice = mapInputToChoice(inputChoice);
   std::cout << rockPaperScissors->getDisplayChoice(choice);
 }
 
@@ -24,4 +24,8 @@ void RockPaperScissorsApp::displayChoices() {
     auto choice = static_cast<Choice>(index);
     std::cout << index + 1 << ": " << rockPaperScissors->getDisplayChoice(choice) << std::endl;
   }
+}
+
+Choice RockPaperScissorsApp::mapInputToChoice(int input) {
+  return static_cast<Choice>(--input);
 }

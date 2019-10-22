@@ -31,3 +31,9 @@ TEST_F(RockPaperScissorsAppTest, displayChoices) {
   std::string output = testing::internal::GetCapturedStdout();
   EXPECT_STREQ("1: Rock\n2: Paper\n3: Scissors\n", output.data());
 }
+
+TEST_F(RockPaperScissorsAppTest, mapInputToChoice) {
+  EXPECT_EQ(rockPaperScissorsApp->mapInputToChoice(1), ROCK);
+  EXPECT_EQ(rockPaperScissorsApp->mapInputToChoice(2), PAPER);
+  EXPECT_EQ(rockPaperScissorsApp->mapInputToChoice(3), SCISSORS);
+}
