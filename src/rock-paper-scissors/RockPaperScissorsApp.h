@@ -13,6 +13,8 @@ public:
   {
     rockPaperScissors = rps;
   }
+
+  void displayChoices();
 };
 
 

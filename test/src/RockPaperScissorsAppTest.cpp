@@ -20,3 +20,14 @@ TEST_F(RockPaperScissorsAppTest, start_callsDisplayMethod3Times) {
 
   rockPaperScissorsApp->start(mockedInput);
 }
+
+TEST_F(RockPaperScissorsAppTest, displayChoices) {
+  EXPECT_CALL(rockPaperScissors, getDisplayChoice).Times(testing::Exactly(3));
+
+  testing::internal::CaptureStdout();
+
+  rockPaperScissorsApp->displayChoices();
+
+  std::string output = testing::internal::GetCapturedStdout();
+  EXPECT_STREQ("1: Rock\n2: Paper\n3: Scissors\n", output.data());
+}

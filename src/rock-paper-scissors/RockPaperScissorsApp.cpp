@@ -8,14 +8,20 @@ void RockPaperScissorsApp::start(std::istream& input) {
   std::cout << "*************************" << std::endl;
   std::cout << std::endl;
   std::cout << "Choose:" << std::endl;
-  for (int index = ROCK; index <= SCISSORS; index++ )
-  {
-    auto choice = static_cast<Choice>(index);
-    std::cout << index << ": " << rockPaperScissors->getDisplayChoice(choice) << std::endl;
-  }
+
+  this->displayChoices();
+
   std::cout << "Your choice: ";
   int inputChoice = 0;
   input >> inputChoice;
   auto choice = static_cast<Choice>(inputChoice);
   std::cout << rockPaperScissors->getDisplayChoice(choice);
+}
+
+void RockPaperScissorsApp::displayChoices() {
+  for (int index = ROCK; index <= SCISSORS; index++ )
+  {
+    auto choice = static_cast<Choice>(index);
+    std::cout << index + 1 << ": " << rockPaperScissors->getDisplayChoice(choice) << std::endl;
+  }
 }
