@@ -7,9 +7,7 @@ enum Choice { ROCK, PAPER, SCISSORS };
 
 class RockPaperScissors {
 public:
-  static void start();
-
-  static std::string getDisplayChoice(Choice choice);
+   virtual std::string getDisplayChoice(Choice choice);
 };
 
 
