@@ -2,10 +2,6 @@
 set -e
 set +x
 
-(
-  mkdir -p build
-  cd build || exit
-  cmake ../
-  make
-  ./test/rock_paper_scissors_tests
-)
+cmake -H. -Bbuild
+cmake --build build
+./build/test/rock_paper_scissors_tests
