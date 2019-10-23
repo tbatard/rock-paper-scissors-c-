@@ -3,18 +3,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: "debian:stretch"
+      - image: "circleci/buildpack-deps:stretch"
     steps:
       - checkout
       - run:
-          name: Installing SUDO
-          command: 'apt-get update && apt-get install -y sudo && rm -rf /var/lib/apt/lists/*'
-      - run:
-          name: Installing GCC
-          command: 'apt-get update && apt-get install -y gcc g++'
-      - run:
-          name: Install CMAKE
-          command: 'apt-get update && sudo apt-get install -y cmake'
+          name: Install cmake
+          command: 'sudo apt-get install -y cmake'
       - run:
           name: Creating Build Files
           command: 'cmake -H. -Bbuild'
@@ -23,4 +17,6 @@ jobs:
           command: 'cmake --build build'
       - run:
           name: Rock Paper Scissors Unit Testing
-          command: './test/rock_paper_scissors_tests'
+          command: './build/test/rock_paper_scissors_tests --gtest_output=xml:build/test-reports/'
+      - store_test_results:
+          path: build/test-reports/
