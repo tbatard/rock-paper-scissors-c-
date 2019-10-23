@@ -4,4 +4,4 @@ set +x
 
 cmake -H. -Bbuild
 cmake --build build
-./build/src/rock_paper_scissors_app
+./build/bin/rock_paper_scissors_app

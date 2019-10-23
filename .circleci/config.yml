@@ -17,6 +17,8 @@ jobs:
           command: 'cmake --build build'
       - run:
           name: Rock Paper Scissors Unit Testing
-          command: './build/test/rock_paper_scissors_tests --gtest_output=xml:build/test-reports/'
+          command: './build/bin/rock_paper_scissors_tests --gtest_output=xml:build/test-reports/'
       - store_test_results:
           path: build/test-reports/
+      - store_artifacts:
+          path: build/bin/

@@ -4,4 +4,4 @@ set +x
 
 cmake -H. -Bbuild
 cmake --build build
-./build/test/rock_paper_scissors_tests
+./build/bin/rock_paper_scissors_tests
