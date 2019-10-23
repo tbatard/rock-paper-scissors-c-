@@ -8,6 +8,10 @@ protected:
     rockPaperScissors = new RockPaperScissors();
   }
 
+  void TearDown() override {
+    delete(rockPaperScissors);
+  }
+
   RockPaperScissors *rockPaperScissors{};
 };
 

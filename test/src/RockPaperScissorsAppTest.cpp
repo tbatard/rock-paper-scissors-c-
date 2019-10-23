@@ -10,6 +10,10 @@ protected:
     rockPaperScissorsApp = new RockPaperScissorsApp(&rockPaperScissors);
   }
 
+  void TearDown() override {
+    delete(rockPaperScissorsApp);
+  }
+
   MockRockPaperScissors rockPaperScissors;
   RockPaperScissorsApp *rockPaperScissorsApp{};
 };
